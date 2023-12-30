@@ -17,7 +17,7 @@ public class DAO {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            connection = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
