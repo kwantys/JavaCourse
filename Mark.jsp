@@ -92,7 +92,7 @@
                         <th>Mark</th>
                         <th>ECTS</th>
                     </tr>
-                     <c:forEach items="${marks}" var="student">
+                     <c:forEach items="${marks}" var="disc">
                         <tr>
                               <td><c:out value="${disc.getDiscipline()}"/></td>
                               <td><c:out value="${disc.getRegular()}"/></td>
