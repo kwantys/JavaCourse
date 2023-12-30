@@ -94,9 +94,9 @@
                     </tr>
                      <c:forEach items="${marks}" var="student">
                         <tr>
-                            <td><c:out value ="${student.getTitle()}"/></td>
-                            <td><c:out value ="${student.getMakr()}"/></td>
-                            <td><c:out value ="${student.getMakr_let()}"/></td>
+                              <td><c:out value="${disc.getDiscipline()}"/></td>
+                              <td><c:out value="${disc.getRegular()}"/></td>
+                              <td><c:out value="${disc.getEcts()}"/></td>
                         </tr>
                    </c:forEach>
                 </table>
