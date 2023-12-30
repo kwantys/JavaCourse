@@ -133,7 +133,7 @@
                         <td><c:out value="${student.getEmail()}"/></td>
                         <td><c:out value="${student.getGroup()}"/></td>
                         <td><c:out value="${student.getFaculty()}"/></td>
-                        <td><a href="GradesServlet?id=${student.getId()}">View Grades</a></td>
+                        <td><a href="Grade?id=${student.getId()}">View Grades</a></td>
                     </tr>
                 </c:forEach>
             </table>
