@@ -23,7 +23,7 @@ public class MainController {
         List<Grade> grades = studentDAO.FindMarks(id);
         model.addAttribute("students" , studentDAO.FindStudent(id));
         model.addAttribute("Mark" , grades);
-        return "marks.jsp";
+        return "Marks.jsp";
     }
     @GetMapping("/StudentAdd")
     public String StudentAdd(){
