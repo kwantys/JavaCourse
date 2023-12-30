@@ -1,4 +1,4 @@
-package sumdu.edu.ua
+package sumdu.edu.ua;
         
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
