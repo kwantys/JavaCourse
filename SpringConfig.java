@@ -1,4 +1,4 @@
-package sumdu.edu.ua
+package sumdu.edu.ua;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
