@@ -1,7 +1,7 @@
 package sumdu.edu.ua
 
 import DAO;
-import GradesServlet;
+import Grade;
 import Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
