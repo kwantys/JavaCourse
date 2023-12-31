@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+">
+
+   <context:component-scan base-package="sumdu.edu.ua.webstudent"/>
+   <bean id="sessionFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="dataSource" ref="myDataSource"/>
+    <property name="packagesToScan" value="sumdu.edu.ua.webstudent.res"/> 
+    <property name="jpaVendorAdapter">
+        <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+            <property name="generateDdl" value="true"/>
+            <property name="showSql" value="true"/>
+            <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/> 
+        </bean>
+    </property>
+</bean>
+
+
+<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
+    <property name="url" value="jdbc:mysql://localhost:3311/university"/>
+    <property name="username" value="root"/>
+    <property name="password" value="root"/>
+</bean>
+
+
+<bean id="myTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory"/>
+</bean>
+
+
+<tx:annotation-driven transaction-manager="myTransactionManager"/>
+</beans>
