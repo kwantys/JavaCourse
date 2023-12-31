@@ -28,27 +28,22 @@ public class TransactionManager {
         this.userRepository = userRepository;
     }
 
-    // Додати користувача
     public Student addStudent(Student student) {
         return userRepository.save(student);
     }
 
-    // Отримати всіх користувачів
     public List<Student> getAllStudent() {
         return userRepository.findAll();
     }
 
-    // Отримати користувача за ідентифікатором
     public Student getStudentById(Long StudentId) {
         return userRepository.findById(StudentId).orElse(null);
     }
 
-    // Оновити інформацію про користувача
     public Student updateStudent(Student student) {
         return userRepository.save(student);
     }
 
-    // Видалити користувача за ідентифікатором
     public void deleteStudent(Long StudentId) {
         userRepository.deleteById(StudentId);
     }
