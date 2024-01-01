@@ -98,7 +98,7 @@
          
          <%= (new java.util.Date()).toLocaleString()%>
      </h1>
-     <p><a href="http://localhost:8080/logout">Log out</a></p>
+     <p><a href="http://localhost:3311/logout">Log out</a></p>
      <sec:authorize access="hasAuthority('ADMIN')">
     <h3><a href="http://localhost:8080/registration">Registration of a new user</a></h3>
         <form  action="StudentAdd">
