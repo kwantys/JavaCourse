@@ -66,9 +66,23 @@ public class GradesServlet extends HttpServlet {
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1, studentId);
             ResultSet rs = preparedStatement.executeQuery();
+          ps= (PreparedStatement) conn.prepareStatement (sql: "SELECT * FROM marks where stud_id=?;");
+          ps.setString (parameterIndex: 1, x: request.getParameter (name: "id2"));
+          rs=ps.executeQuery();
+          List<Content> cont = new LinkedList<Content>();
                     while (rs.next()) { 
-                        studentMark mark = new studentMark(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5)); 
-                        marks.add(mark);
+                        Content ctn = (Content)factory.getBean("Content");
+
+            
+            ctn.setId(Integer.parseInt(rs.getString(1)));
+            ctn.setStud_id(Integer.parseInt(rs.getString(2)));
+            ctn.setTitle(rs.getString(3));
+            ctn.setScore_num(Integer.parseInt(rs.getString(5)));
+            ctn.setScore_1(rs.getString(4));
+
+            
+            cont.add(ctn);
+                    session.setAttribute("marks", cont);
                     } 
         }
         return marks;
